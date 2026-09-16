@@ -1,0 +1,802 @@
+[
+  {
+    "id": 1,
+    "title": "Atomic Habits",
+    "author": "James Clear",
+    "genre": "Self-Help",
+    "price": 499,
+    "isAvailable": true
+  },
+  {
+    "id": 2,
+    "title": "The Alchemist",
+    "author": "Paulo Coelho",
+    "genre": "Fiction",
+    "price": 399,
+    "isAvailable": true
+  },
+  {
+    "id": 3,
+    "title": "Rich Dad Poor Dad",
+    "author": "Robert Kiyosaki",
+    "genre": "Finance",
+    "price": 449,
+    "isAvailable": false
+  },
+  {
+    "id": 4,
+    "title": "The Psychology of Money",
+    "author": "Morgan Housel",
+    "genre": "Finance",
+    "price": 499,
+    "isAvailable": true
+  },
+  {
+    "id": 5,
+    "title": "Ikigai",
+    "author": "Hector Garcia",
+    "genre": "Self-Help",
+    "price": 349,
+    "isAvailable": true
+  },
+  {
+    "id": 6,
+    "title": "Deep Work",
+    "author": "Cal Newport",
+    "genre": "Productivity",
+    "price": 549,
+    "isAvailable": true
+  },
+  {
+    "id": 7,
+    "title": "The Power of Now",
+    "author": "Eckhart Tolle",
+    "genre": "Spirituality",
+    "price": 399,
+    "isAvailable": false
+  },
+  {
+    "id": 8,
+    "title": "Think and Grow Rich",
+    "author": "Napoleon Hill",
+    "genre": "Finance",
+    "price": 299,
+    "isAvailable": true
+  },
+  {
+    "id": 9,
+    "title": "The 7 Habits of Highly Effective People",
+    "author": "Stephen Covey",
+    "genre": "Self-Help",
+    "price": 599,
+    "isAvailable": true
+  },
+  {
+    "id": 10,
+    "title": "1984",
+    "author": "George Orwell",
+    "genre": "Dystopian",
+    "price": 299,
+    "isAvailable": true
+  },
+  {
+    "id": 11,
+    "title": "The Great Gatsby",
+    "author": "F. Scott Fitzgerald",
+    "genre": "Classic",
+    "price": 279,
+    "isAvailable": false
+  },
+  {
+    "id": 12,
+    "title": "To Kill a Mockingbird",
+    "author": "Harper Lee",
+    "genre": "Classic",
+    "price": 329,
+    "isAvailable": true
+  },
+  {
+    "id": 13,
+    "title": "The Hobbit",
+    "author": "J.R.R. Tolkien",
+    "genre": "Fantasy",
+    "price": 449,
+    "isAvailable": true
+  },
+  {
+    "id": 14,
+    "title": "Harry Potter and the Philosopher's Stone",
+    "author": "J.K. Rowling",
+    "genre": "Fantasy",
+    "price": 499,
+    "isAvailable": true
+  },
+  {
+    "id": 15,
+    "title": "The Kite Runner",
+    "author": "Khaled Hosseini",
+    "genre": "Fiction",
+    "price": 399,
+    "isAvailable": false
+  },
+  {
+    "id": 16,
+    "title": "The Book Thief",
+    "author": "Markus Zusak",
+    "genre": "Historical Fiction",
+    "price": 449,
+    "isAvailable": true
+  },
+  {
+    "id": 17,
+    "title": "Sapiens",
+    "author": "Yuval Noah Harari",
+    "genre": "History",
+    "price": 599,
+    "isAvailable": true
+  },
+  {
+    "id": 18,
+    "title": "Homo Deus",
+    "author": "Yuval Noah Harari",
+    "genre": "History",
+    "price": 649,
+    "isAvailable": false
+  },
+  {
+    "id": 19,
+    "title": "The Subtle Art of Not Giving a F*ck",
+    "author": "Mark Manson",
+    "genre": "Self-Help",
+    "price": 449,
+    "isAvailable": true
+  },
+  {
+    "id": 20,
+    "title": "Make Time",
+    "author": "Jake Knapp",
+    "genre": "Productivity",
+    "price": 499,
+    "isAvailable": true
+  },
+  {
+    "id": 21,
+    "title": "Start With Why",
+    "author": "Simon Sinek",
+    "genre": "Business",
+    "price": 449,
+    "isAvailable": false
+  },
+  {
+    "id": 22,
+    "title": "Zero to One",
+    "author": "Peter Thiel",
+    "genre": "Business",
+    "price": 399,
+    "isAvailable": true
+  },
+  {
+    "id": 23,
+    "title": "The Lean Startup",
+    "author": "Eric Ries",
+    "genre": "Business",
+    "price": 499,
+    "isAvailable": true
+  },
+  {
+    "id": 24,
+    "title": "The 4-Hour Workweek",
+    "author": "Tim Ferriss",
+    "genre": "Business",
+    "price": 549,
+    "isAvailable": false
+  },
+  {
+    "id": 25,
+    "title": "Can't Hurt Me",
+    "author": "David Goggins",
+    "genre": "Memoir",
+    "price": 499,
+    "isAvailable": true
+  },
+  {
+    "id": 26,
+    "title": "Never Finished",
+    "author": "David Goggins",
+    "genre": "Self-Help",
+    "price": 549,
+    "isAvailable": true
+  },
+  {
+    "id": 27,
+    "title": "Man's Search for Meaning",
+    "author": "Viktor Frankl",
+    "genre": "Psychology",
+    "price": 299,
+    "isAvailable": true
+  },
+  {
+    "id": 28,
+    "title": "Meditations",
+    "author": "Marcus Aurelius",
+    "genre": "Philosophy",
+    "price": 279,
+    "isAvailable": false
+  },
+  {
+    "id": 29,
+    "title": "The Courage to Be Disliked",
+    "author": "Ichiro Kishimi",
+    "genre": "Psychology",
+    "price": 449,
+    "isAvailable": true
+  },
+  {
+    "id": 30,
+    "title": "The Art of War",
+    "author": "Sun Tzu",
+    "genre": "Strategy",
+    "price": 249,
+    "isAvailable": true
+  },
+  {
+    "id": 31,
+    "title": "Pride and Prejudice",
+    "author": "Jane Austen",
+    "genre": "Classic",
+    "price": 299,
+    "isAvailable": false
+  },
+  {
+    "id": 32,
+    "title": "Jane Eyre",
+    "author": "Charlotte Bronte",
+    "genre": "Classic",
+    "price": 329,
+    "isAvailable": true
+  },
+  {
+    "id": 33,
+    "title": "Little Women",
+    "author": "Louisa May Alcott",
+    "genre": "Classic",
+    "price": 349,
+    "isAvailable": true
+  },
+  {
+    "id": 34,
+    "title": "The Picture of Dorian Gray",
+    "author": "Oscar Wilde",
+    "genre": "Classic",
+    "price": 299,
+    "isAvailable": true
+  },
+  {
+    "id": 35,
+    "title": "Dracula",
+    "author": "Bram Stoker",
+    "genre": "Horror",
+    "price": 349,
+    "isAvailable": false
+  },
+  {
+    "id": 36,
+    "title": "Frankenstein",
+    "author": "Mary Shelley",
+    "genre": "Horror",
+    "price": 329,
+    "isAvailable": true
+  },
+  {
+    "id": 37,
+    "title": "The Shining",
+    "author": "Stephen King",
+    "genre": "Horror",
+    "price": 499,
+    "isAvailable": true
+  },
+  {
+    "id": 38,
+    "title": "It",
+    "author": "Stephen King",
+    "genre": "Horror",
+    "price": 699,
+    "isAvailable": false
+  },
+  {
+    "id": 39,
+    "title": "The Da Vinci Code",
+    "author": "Dan Brown",
+    "genre": "Mystery",
+    "price": 399,
+    "isAvailable": true
+  },
+  {
+    "id": 40,
+    "title": "Angels and Demons",
+    "author": "Dan Brown",
+    "genre": "Thriller",
+    "price": 399,
+    "isAvailable": true
+  },
+  {
+    "id": 41,
+    "title": "Gone Girl",
+    "author": "Gillian Flynn",
+    "genre": "Thriller",
+    "price": 449,
+    "isAvailable": false
+  },
+  {
+    "id": 42,
+    "title": "The Girl on the Train",
+    "author": "Paula Hawkins",
+    "genre": "Thriller",
+    "price": 399,
+    "isAvailable": true
+  },
+  {
+    "id": 43,
+    "title": "The Silent Patient",
+    "author": "Alex Michaelides",
+    "genre": "Mystery",
+    "price": 449,
+    "isAvailable": true
+  },
+  {
+    "id": 44,
+    "title": "Sherlock Holmes",
+    "author": "Arthur Conan Doyle",
+    "genre": "Mystery",
+    "price": 349,
+    "isAvailable": true
+  },
+  {
+    "id": 45,
+    "title": "Murder on the Orient Express",
+    "author": "Agatha Christie",
+    "genre": "Mystery",
+    "price": 329,
+    "isAvailable": false
+  },
+  {
+    "id": 46,
+    "title": "And Then There Were None",
+    "author": "Agatha Christie",
+    "genre": "Mystery",
+    "price": 349,
+    "isAvailable": true
+  },
+  {
+    "id": 47,
+    "title": "The Midnight Library",
+    "author": "Matt Haig",
+    "genre": "Fiction",
+    "price": 399,
+    "isAvailable": true
+  },
+  {
+    "id": 48,
+    "title": "A Man Called Ove",
+    "author": "Fredrik Backman",
+    "genre": "Fiction",
+    "price": 449,
+    "isAvailable": false
+  },
+  {
+    "id": 49,
+    "title": "Normal People",
+    "author": "Sally Rooney",
+    "genre": "Romance",
+    "price": 399,
+    "isAvailable": true
+  },
+  {
+    "id": 50,
+    "title": "Me Before You",
+    "author": "Jojo Moyes",
+    "genre": "Romance",
+    "price": 379,
+    "isAvailable": true
+  },
+  {
+    "id": 51,
+    "title": "The Fault in Our Stars",
+    "author": "John Green",
+    "genre": "Romance",
+    "price": 349,
+    "isAvailable": false
+  },
+  {
+    "id": 52,
+    "title": "Five Point Someone",
+    "author": "Chetan Bhagat",
+    "genre": "Fiction",
+    "price": 249,
+    "isAvailable": true
+  },
+  {
+    "id": 53,
+    "title": "The White Tiger",
+    "author": "Aravind Adiga",
+    "genre": "Fiction",
+    "price": 299,
+    "isAvailable": true
+  },
+  {
+    "id": 54,
+    "title": "Train to Pakistan",
+    "author": "Khushwant Singh",
+    "genre": "Historical Fiction",
+    "price": 279,
+    "isAvailable": false
+  },
+  {
+    "id": 55,
+    "title": "The Guide",
+    "author": "R.K. Narayan",
+    "genre": "Classic",
+    "price": 249,
+    "isAvailable": true
+  },
+  {
+    "id": 56,
+    "title": "Malgudi Days",
+    "author": "R.K. Narayan",
+    "genre": "Fiction",
+    "price": 299,
+    "isAvailable": true
+  },
+  {
+    "id": 57,
+    "title": "Wings of Fire",
+    "author": "A.P.J. Abdul Kalam",
+    "genre": "Biography",
+    "price": 399,
+    "isAvailable": true
+  },
+  {
+    "id": 58,
+    "title": "My Experiments with Truth",
+    "author": "Mahatma Gandhi",
+    "genre": "Autobiography",
+    "price": 349,
+    "isAvailable": false
+  },
+  {
+    "id": 59,
+    "title": "Steve Jobs",
+    "author": "Walter Isaacson",
+    "genre": "Biography",
+    "price": 699,
+    "isAvailable": true
+  },
+  {
+    "id": 60,
+    "title": "Elon Musk",
+    "author": "Walter Isaacson",
+    "genre": "Biography",
+    "price": 799,
+    "isAvailable": true
+  },
+  {
+    "id": 61,
+    "title": "The Intelligent Investor",
+    "author": "Benjamin Graham",
+    "genre": "Finance",
+    "price": 599,
+    "isAvailable": false
+  },
+  {
+    "id": 62,
+    "title": "One Up On Wall Street",
+    "author": "Peter Lynch",
+    "genre": "Finance",
+    "price": 549,
+    "isAvailable": true
+  },
+  {
+    "id": 63,
+    "title": "The Millionaire Fastlane",
+    "author": "M.J. DeMarco",
+    "genre": "Finance",
+    "price": 499,
+    "isAvailable": true
+  },
+  {
+    "id": 64,
+    "title": "The Richest Man in Babylon",
+    "author": "George S. Clason",
+    "genre": "Finance",
+    "price": 299,
+    "isAvailable": true
+  },
+  {
+    "id": 65,
+    "title": "Good to Great",
+    "author": "Jim Collins",
+    "genre": "Business",
+    "price": 499,
+    "isAvailable": false
+  },
+  {
+    "id": 66,
+    "title": "Built to Last",
+    "author": "Jim Collins",
+    "genre": "Business",
+    "price": 549,
+    "isAvailable": true
+  },
+  {
+    "id": 67,
+    "title": "Rework",
+    "author": "Jason Fried",
+    "genre": "Business",
+    "price": 399,
+    "isAvailable": true
+  },
+  {
+    "id": 68,
+    "title": "Hooked",
+    "author": "Nir Eyal",
+    "genre": "Business",
+    "price": 449,
+    "isAvailable": false
+  },
+  {
+    "id": 69,
+    "title": "Show Your Work",
+    "author": "Austin Kleon",
+    "genre": "Creativity",
+    "price": 349,
+    "isAvailable": true
+  },
+  {
+    "id": 70,
+    "title": "Steal Like an Artist",
+    "author": "Austin Kleon",
+    "genre": "Creativity",
+    "price": 299,
+    "isAvailable": true
+  },
+  {
+    "id": 71,
+    "title": "The Creative Act",
+    "author": "Rick Rubin",
+    "genre": "Creativity",
+    "price": 699,
+    "isAvailable": true
+  },
+  {
+    "id": 72,
+    "title": "On Writing",
+    "author": "Stephen King",
+    "genre": "Writing",
+    "price": 449,
+    "isAvailable": false
+  },
+  {
+    "id": 73,
+    "title": "Ego Is the Enemy",
+    "author": "Ryan Holiday",
+    "genre": "Self-Help",
+    "price": 399,
+    "isAvailable": true
+  },
+  {
+    "id": 74,
+    "title": "The Obstacle Is the Way",
+    "author": "Ryan Holiday",
+    "genre": "Philosophy",
+    "price": 399,
+    "isAvailable": true
+  },
+  {
+    "id": 75,
+    "title": "Stillness Is the Key",
+    "author": "Ryan Holiday",
+    "genre": "Self-Help",
+    "price": 449,
+    "isAvailable": false
+  },
+  {
+    "id": 76,
+    "title": "Essentialism",
+    "author": "Greg McKeown",
+    "genre": "Productivity",
+    "price": 499,
+    "isAvailable": true
+  },
+  {
+    "id": 77,
+    "title": "Getting Things Done",
+    "author": "David Allen",
+    "genre": "Productivity",
+    "price": 549,
+    "isAvailable": true
+  },
+  {
+    "id": 78,
+    "title": "Eat That Frog",
+    "author": "Brian Tracy",
+    "genre": "Productivity",
+    "price": 299,
+    "isAvailable": false
+  },
+  {
+    "id": 79,
+    "title": "The Power of Habit",
+    "author": "Charles Duhigg",
+    "genre": "Psychology",
+    "price": 449,
+    "isAvailable": true
+  },
+  {
+    "id": 80,
+    "title": "Thinking Fast and Slow",
+    "author": "Daniel Kahneman",
+    "genre": "Psychology",
+    "price": 599,
+    "isAvailable": true
+  },
+  {
+    "id": 81,
+    "title": "Influence",
+    "author": "Robert Cialdini",
+    "genre": "Psychology",
+    "price": 549,
+    "isAvailable": false
+  },
+  {
+    "id": 82,
+    "title": "Drive",
+    "author": "Daniel H. Pink",
+    "genre": "Psychology",
+    "price": 449,
+    "isAvailable": true
+  },
+  {
+    "id": 83,
+    "title": "The Happiness Advantage",
+    "author": "Shawn Achor",
+    "genre": "Self-Help",
+    "price": 399,
+    "isAvailable": true
+  },
+  {
+    "id": 84,
+    "title": "Grit",
+    "author": "Angela Duckworth",
+    "genre": "Psychology",
+    "price": 499,
+    "isAvailable": false
+  },
+  {
+    "id": 85,
+    "title": "Outliers",
+    "author": "Malcolm Gladwell",
+    "genre": "Psychology",
+    "price": 449,
+    "isAvailable": true
+  },
+  {
+    "id": 86,
+    "title": "Blink",
+    "author": "Malcolm Gladwell",
+    "genre": "Psychology",
+    "price": 399,
+    "isAvailable": true
+  },
+  {
+    "id": 87,
+    "title": "The Tipping Point",
+    "author": "Malcolm Gladwell",
+    "genre": "Psychology",
+    "price": 449,
+    "isAvailable": false
+  },
+  {
+    "id": 88,
+    "title": "The Four Agreements",
+    "author": "Don Miguel Ruiz",
+    "genre": "Self-Help",
+    "price": 349,
+    "isAvailable": true
+  },
+  {
+    "id": 89,
+    "title": "The Monk Who Sold His Ferrari",
+    "author": "Robin Sharma",
+    "genre": "Self-Help",
+    "price": 349,
+    "isAvailable": true
+  },
+  {
+    "id": 90,
+    "title": "Who Moved My Cheese",
+    "author": "Spencer Johnson",
+    "genre": "Self-Help",
+    "price": 249,
+    "isAvailable": false
+  },
+  {
+    "id": 91,
+    "title": "The Secret",
+    "author": "Rhonda Byrne",
+    "genre": "Self-Help",
+    "price": 399,
+    "isAvailable": true
+  },
+  {
+    "id": 92,
+    "title": "The Secret of the Nagas",
+    "author": "Amish Tripathi",
+    "genre": "Fantasy",
+    "price": 399,
+    "isAvailable": true
+  },
+  {
+    "id": 93,
+    "title": "The Immortals of Meluha",
+    "author": "Amish Tripathi",
+    "genre": "Fantasy",
+    "price": 399,
+    "isAvailable": false
+  },
+  {
+    "id": 94,
+    "title": "The Palace of Illusions",
+    "author": "Chitra Banerjee Divakaruni",
+    "genre": "Mythology",
+    "price": 449,
+    "isAvailable": true
+  },
+  {
+    "id": 95,
+    "title": "The Shiva Trilogy",
+    "author": "Amish Tripathi",
+    "genre": "Mythology",
+    "price": 899,
+    "isAvailable": true
+  },
+  {
+    "id": 96,
+    "title": "The Namesake",
+    "author": "Jhumpa Lahiri",
+    "genre": "Fiction",
+    "price": 399,
+    "isAvailable": false
+  },
+  {
+    "id": 97,
+    "title": "A Suitable Boy",
+    "author": "Vikram Seth",
+    "genre": "Fiction",
+    "price": 699,
+    "isAvailable": true
+  },
+  {
+    "id": 98,
+    "title": "The God of Small Things",
+    "author": "Arundhati Roy",
+    "genre": "Fiction",
+    "price": 399,
+    "isAvailable": true
+  },
+  {
+    "id": 99,
+    "title": "Midnight's Children",
+    "author": "Salman Rushdie",
+    "genre": "Historical Fiction",
+    "price": 499,
+    "isAvailable": false
+  },
+  {
+    "id": 100,
+    "title": "The Palace of Dreams",
+    "author": "Ismail Kadare",
+    "genre": "Fiction",
+    "price": 349,
+    "isAvailable": true
+  }
+]
