@@ -798,5 +798,21 @@
     "genre": "Fiction",
     "price": 349,
     "isAvailable": true
+  },
+  {
+    "title": "The Green Land",
+    "author": "Baskin Robins",
+    "genre": "Comedy",
+    "price": "700",
+    "isAvailable": "true",
+    "id": 101
+  },
+  {
+    "title": "The Lily",
+    "author": "Gabriel Jesus",
+    "genre": "Self-Help",
+    "price": "299",
+    "isAvailable": "false",
+    "id": 102
   }
 ]

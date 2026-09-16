@@ -2,10 +2,28 @@ const express = require('express');
 const app = express();
 const port = 3000;
 const books = require('./books.json')
+const fs = require('fs');
+const { error } = require('console');
 
+app.use(express.urlencoded({extended:true}))
 app.use(express.json());
 
 
+function getNewId(books) {
+  if(books.length===0){
+    return 1
+  }
+  let maxId = books[0].id
+
+  for (let i = 1; i< books.length; i++) {
+    if (books[i].id>maxId) {
+      maxId = books[i].id
+    }
+  }
+  return maxId + 1
+}
+
+// HomePage Response
 app.get('/', (req, res) => {
   let html = `
   <h1>Welcome to the Book Store</h1>
@@ -13,6 +31,8 @@ app.get('/', (req, res) => {
   res.send(html)
 });
 
+
+// To get All the names of the book
 app.get('/books', (req, res) => {
   let html = `
   <ul>
@@ -22,6 +42,7 @@ app.get('/books', (req, res) => {
   res.send(html)
 });
 
+// To get the Books in Json format / Sort by Genre 
 app.get('/api/books', (req, res) => {
   const genre = (req.query.genre)
   if (genre) {
@@ -33,6 +54,8 @@ app.get('/api/books', (req, res) => {
   return res.json(books)
 })
 
+
+// To get a particlar book details By ID
 app.get('/api/books/:id', (req, res) => {
   const id = Number(req.params.id)
   let book = books.find((book) => {
@@ -42,6 +65,23 @@ app.get('/api/books/:id', (req, res) => {
     return res.status(400).json({ status: 'Error', message: 'Book not found' })
   }
   return res.status(200).json({book:book})
+})
+
+
+// To add new Book to the data
+app.post('/api/books',(req,res)=>{
+  const body = req.body
+  const newid = getNewId(books)
+  if(!req.body.title || !req.body.author){
+    return res.status(400).json({message:'All Fields are required'})
+  }
+  books.push({...body,id:newid})
+  fs.writeFile('./books.json',JSON.stringify(books),(err,data)=>{
+    if(err){
+      return res.json({staus:'Error',message:err.message})
+    }
+    return res.status(201).json({status:'Success',newid})
+  })
 })
 
 app.listen(port, () => {
