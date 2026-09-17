@@ -1,0 +1,111 @@
+{
+  "info": {
+    "_postman_id": "f0f32682-a999-4f19-a97a-ae5825158163",
+    "name": "Book Management",
+    "description": "### Welcome to Postman! This is your first collection. \n\nCollections are your starting point for building and testing APIs. You can use this one to:\n\n• Group related requests\n• Test your API in real-world scenarios\n• Document and share your requests\n\nUpdate the name and overview whenever you’re ready to make it yours.\n\n[Learn more about Postman Collections.](https://learning.postman.com/docs/collections/collections-overview/)",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "54904573",
+    "_collection_link": "https://go.postman.co/collection/54904573-f0f32682-a999-4f19-a97a-ae5825158163?source=collection_link"
+  },
+  "item": [
+    {
+      "name": "Get Book by ID",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Purpose",
+            "value": "Testing"
+          }
+        ],
+        "url": {
+          "raw": "http://localhost:3000/api/books/101",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "books", "101"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Create New Book",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "urlencoded",
+          "urlencoded": [
+            {
+              "key": "title",
+              "value": "The Bare Foots"
+            },
+            {
+              "key": "author",
+              "value": "Johan cryuff"
+            },
+            {
+              "key": "genre",
+              "value": "Self-Help"
+            },
+            {
+              "key": "price",
+              "value": "1005"
+            },
+            {
+              "key": "isAvailable",
+              "value": "true"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/books",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "books"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Update Book Details",
+      "request": {
+        "method": "PATCH",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"price\":\"2000\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:3000/api/books/102",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "books", "102"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Book",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:3000/api/books/99",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "3000",
+          "path": ["api", "books", "99"]
+        }
+      },
+      "response": []
+    }
+  ]
+}
