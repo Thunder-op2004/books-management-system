@@ -155,7 +155,7 @@ Make sure you have **Node.js** installed on your machine.
 Clone the repository and install dependencies:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/YOUR_REPOSITORY_NAME.git
+git clone https://github.com/Thunder-op2004/books-management-system.git
 
 cd YOUR_REPOSITORY_NAME
 
