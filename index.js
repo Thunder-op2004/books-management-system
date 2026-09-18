@@ -4,10 +4,11 @@ const port = 3000;
 const books = require('./books.json')
 const fs = require('fs');
 
+// Required Middlewares
 app.use(express.urlencoded({extended:true}))
 app.use(express.json());
 
-
+// Function to auto create new id for books
 function getNewId(books) {
   if(books.length===0){
     return 1
