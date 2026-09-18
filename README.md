@@ -159,7 +159,7 @@ git clone https://github.com/Thunder-op2004/books-management-system.git
 
 cd YOUR_REPOSITORY_NAME
 
-npm install express
+npm install 
 ```
 
 3. Run Server
