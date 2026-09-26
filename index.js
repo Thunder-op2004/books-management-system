@@ -1,12 +1,20 @@
 const express = require('express');
 const app = express();
 const port = 3000;
-const books = require('./books.json')
+const mongoose = require('mongoose');
 const fs = require('fs');
+require('dotenv').config()
 
-// Required Middlewares
+// Required Middleware
+
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json());
+
+// Connecting to MongoDb Database
+mongoose.connect(process.env.MONGO_URL)
+  .then(() => console.log('Connected!'))
+  .catch((err) => console.log('Error connecting to MongoDb', err))
+
 app.use((req, res, next) => {
   fs.appendFile('log.txt', `\n${Date.now()}:${req.method} -> ${req.path}`, (err) => {
     if (err) {
@@ -16,20 +24,33 @@ app.use((req, res, next) => {
   })
 })
 
-// Function to auto create new id for books
-function getNewId(books) {
-  if (books.length === 0) {
-    return 1
-  }
-  let maxId = books[0].id
+// Definine the structure of my schema
 
-  for (let i = 1; i < books.length; i++) {
-    if (books[i].id > maxId) {
-      maxId = books[i].id
-    }
+const bookSchema = new mongoose.Schema({
+  title: {
+    type: String,
+    required: true
+  },
+  author: {
+    type: String,
+    required: true
+  },
+  genre: {
+    type: String,
+    required: true
+  },
+  price: {
+    type: Number,
+    required: true
+  },
+  isAvailable: {
+    type: Boolean,
+    required: true
   }
-  return maxId + 1
-}
+}, { timestamps: true })
+
+// My model
+const MyModel = mongoose.model('book', bookSchema);
 
 // HomePage Response
 app.get('/', (req, res) => {
@@ -40,95 +61,85 @@ app.get('/', (req, res) => {
 });
 
 
-// To get All the names of the book
-app.get('/books', (req, res) => {
-  let html = `
-  <ul>
-  ${books.map((book) => `<li>${book.title}</li>`).join("")}
-  </ul>
-  `
-  res.send(html)
-});
-
-// To get the Books in Json format / Sort by Genre 
-app.get('/api/books', (req, res) => {
-  const genre = (req.query.genre)
-  if (genre) {
-    const filterredbygenre = books.filter((book) => {
-      return book.genre === genre
-    })
-    return res.json(filterredbygenre)
-  }
-  return res.json(books)
-})
+app
+  .route('/api/books')
+  // To get all the books in json format
+  .get(async (req, res) => {
+    try {
+      const books = await MyModel.find()
+      return res.status(200).json(books)
+    } catch (error) {
+      return res.status(500).json({ error: error.message })
+    }
+  })
+  // To add new Book to the data
+  .post(async (req, res) => {
+    try {
+      const { title, author, genre, price, isAvailable } = req.body
+      if (!title || !author || !genre || price === undefined || isAvailable === undefined) {
+        return res.status(400).json({ message: 'All fields are required to create a book' })
+      }
+      const book = await MyModel.create(req.body)
+      return res.status(201).json({ message: 'Create a new book', book: book, id: book._id })
+    } catch (error) {
+      return res.status(500).json({ Error: error.message })
+    }
+  })
 
 
 app
   .route('/api/books/:id')
   // To get a particlar book details By ID
-  .get((req, res) => {
-    const id = Number(req.params.id)
-    let book = books.find((book) => {
-      return book.id === id
-    })
-    if (!book) {
-      return res.status(404).json({ status: 'Error', message: 'Book not found' })
+  .get(async (req, res) => {
+    try {
+      const { id } = req.params
+      const book = await MyModel.findById(id)
+      if (!book) {
+        return res.status(404).json({ message: 'No book found with that id' })
+      }
+      return res.status(200).json({ book: book })
+    } catch (error) {
+      if (error.name === 'CastError') {
+        return res.status(400).json({ message: 'Invalid ID format' });
+      }
+      return res.status(500).json({ Error: error.message })
     }
-    return res.status(200).json({ book: book })
   })
   // To Update a existing book detail
-  .patch((req, res) => {
-    const body = req.body
-    const id = Number(req.params.id)
-    let book = books.find((book) => {
-      return book.id === id
-    })
-    if (!book) {
-      return res.status(404).json({ status: 'Error', message: 'No such book with that id found' })
-    }
-    book = Object.assign(book, body)
-    fs.writeFile('./books.json', JSON.stringify(books, null, 2), (err) => {
-      if (err) {
-        return res.json({ err: 'Unable to update the existing data', message: err.message })
+  .patch(async (req, res) => {
+    try {
+      const { id } = req.params
+      const updatedbook = await MyModel.findByIdAndUpdate(id, req.body, {
+        new: true,
+        runValidators: true
+      })
+      if (!updatedbook) {
+        return res.status(404).json({ message: 'No book found with that id' })
       }
-      return res.status(200).json({ status: 'Success', book: book })
-    })
+      return res.status(200).json({ book: updatedbook })
+    } catch (error) {
+      if (error.name === 'CastError') {
+        return res.status(400).json({ message: 'Invalid ID format' });
+      }
+      return res.status(500).json({ Error: error.message })
+    }
   })
-  .delete((req, res) => {
-    const id = Number(req.params.id)
-    const book = books.find((book) => {
-      return book.id === id
-    })
-    if (!book) {
-      return res.status(404).json({ status: 'Error', message: 'No such book with that id is found' })
-    }
-    const updatedlist = books.filter(obj => obj.id !== id)
-    books.length = 0
-    books.push(...updatedlist)
-    fs.writeFile('./books.json', JSON.stringify(books, null, 2), (err) => {
-      if (err) {
-        return res.json({ status: 'Error', message: err.message })
+  .delete(async (req, res) => {
+    try {
+      const { id } = req.params
+      const book = await MyModel.findByIdAndDelete(id)
+      if (!book) {
+        return res.status(404).json({ message: 'No book found with that id' })
       }
-      return res.status(200).json({ status: 'Success', books: books })
-    })
+      return res.status(200).json({ message: 'Success in deleting the book', book: book })
+    } catch (error) {
+      if (error.name === 'CastError') {
+        return res.status(400).json({ message: 'Invalid ID format' });
+      }
+      return res.status(500).json({ Error: error.message })
+    }
   })
 
-
-// To add new Book to the data
-app.post('/api/books', (req, res) => {
-  const body = req.body
-  const newid = getNewId(books)
-  if (!req.body.title || !req.body.author) {
-    return res.status(400).json({ message: 'All Fields are required' })
-  }
-  books.push({ ...body, id: newid })
-  fs.writeFile('./books.json', JSON.stringify(books, null, 2), (err, data) => {
-    if (err) {
-      return res.json({ status: 'Error', message: err.message })
-    }
-    return res.status(201).json({ status: 'Success', newid })
-  })
-})
 
 
 app.listen(port, () => {
